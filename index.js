@@ -47,5 +47,7 @@ app.use('/graphql', graphqlHTTP({
 // Start server
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
-  console.log(`GraphQL API server running at http://localhost:${PORT}/graphql`);
+  console.log(`GraphQL API server running on port ${PORT}`);
+}).on('error', (err) => {
+  console.error('Server failed to start:', err);
 });
